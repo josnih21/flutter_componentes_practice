@@ -9,7 +9,24 @@ class CardPage extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.all(10.0),
-        children: <Widget>[_cardType1(), SizedBox(height: 30.0), _cardType2()],
+        children: <Widget>[
+          _cardType1(), 
+          SizedBox(height: 30.0), 
+          _cardType2(),
+          SizedBox(height:30.0),
+          _cardType1(), 
+          SizedBox(height: 30.0), 
+          _cardType2(),
+          SizedBox(height:30.0),
+          _cardType1(), 
+          SizedBox(height: 30.0), 
+          _cardType2(),
+          SizedBox(height:30.0),
+          _cardType1(), 
+          SizedBox(height: 30.0), 
+          _cardType2(),
+          SizedBox(height:30.0),
+        ],
       ),
     );
   }
@@ -40,13 +57,13 @@ class CardPage extends StatelessWidget {
       ),
       color: Colors.deepOrange,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10.0))),
+          borderRadius: BorderRadius.all(Radius.circular(20.0))),
       elevation: 10.0,
     );
   }
 
   Widget _cardType2() {
-    return Card(
+    final card = Container(
       child: Column(
         children: <Widget>[
           FadeInImage(
@@ -54,12 +71,27 @@ class CardPage extends StatelessWidget {
               image: NetworkImage(
                   "https://www.visitlapalma.es/wp-content/uploads/2019/02/astroturismo.jpg"),
               fadeInDuration: Duration(milliseconds: 2000),
-              height: 250.0,
+              height: 300,
               fit: BoxFit.cover),
           Container(
+              padding: EdgeInsets.all(10.0),
               child: Text('Hola esto es una foto del observatorio de La Palma'))
         ],
       ),
+    );
+
+    return Container(
+      child: ClipRRect(
+        child: card,
+        borderRadius: BorderRadius.circular(20.0),
+
+      ),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(color: Colors.black26, blurRadius: 10.0,spreadRadius:10.0,offset: Offset(2.0,10.0)),
+          ]),
     );
   }
 }
