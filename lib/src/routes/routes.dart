@@ -1,4 +1,5 @@
 import 'package:components_practice/src/pages/alerta_page.dart';
+import 'package:components_practice/src/pages/animated_container.dart';
 import 'package:components_practice/src/pages/avatar_page.dart';
 import 'package:components_practice/src/pages/cart_page.dart';
 import 'package:components_practice/src/pages/home_page.dart';
@@ -10,5 +11,6 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     'alert': (BuildContext context) => AlertaPage(),
     'avatar': (BuildContext context) => AvatarPage(),
     'card': (BuildContext context) => CardPage(),
+    'animatedContainer' : (BuildContext context) => AnimatedContainerPage(),
   };
 }

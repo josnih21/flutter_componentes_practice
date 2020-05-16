@@ -1,4 +1,3 @@
-import 'package:components_practice/src/pages/cart_page.dart';
 import 'package:components_practice/src/routes/routes.dart';
 
 import 'package:flutter/material.dart';
