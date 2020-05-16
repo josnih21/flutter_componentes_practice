@@ -1,3 +1,4 @@
+
 import 'package:components_practice/src/pages/alerta_page.dart';
 import 'package:components_practice/src/providers/menu_provider.dart';
 import 'package:components_practice/src/utils/icono_string_util.dart';
@@ -7,6 +8,25 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: 
+        ListView(
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('Header'),
+              decoration: BoxDecoration(
+                color: Colors.pinkAccent
+              ),
+            ),
+            ListTile(
+              title: Text('Hola amigos'),
+              onTap: (){},
+            ),
+            Divider(color: Colors.orange)
+        ],
+      )
+      ),
+        
       appBar: AppBar(
         title: Text('Bienvenido a mi lista'),
       ),
