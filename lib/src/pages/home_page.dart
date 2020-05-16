@@ -8,25 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: 
-        ListView(
-          children: <Widget>[
-            DrawerHeader(
-              child: Text('Header'),
-              decoration: BoxDecoration(
-                color: Colors.pinkAccent
-              ),
-            ),
-            ListTile(
-              title: Text('Hola amigos'),
-              onTap: (){},
-            ),
-            Divider(color: Colors.orange)
-        ],
-      )
-      ),
-        
+      drawer: _myDrawer(),
       appBar: AppBar(
         title: Text('Bienvenido a mi lista'),
       ),
@@ -63,5 +45,65 @@ class HomePage extends StatelessWidget {
       options..add(widgetTemp)..add(Divider());
     });
     return options;
+  }
+
+  Widget _myDrawer(){
+    return Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              child: Stack(
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child:CircleAvatar(
+                      backgroundImage: AssetImage('assets/josnih.png'),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child:Text('José Ángel Nieda',
+                      style: TextStyle(color: Colors.white,fontSize: 20.0),
+                    ),
+                    
+                  ),
+                  Divider(color: Colors.transparent),
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child:Text('josnih@gmail.com',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    
+                  ),
+                  
+                ],
+              ),
+              decoration: BoxDecoration(
+                color: Colors.lightBlueAccent
+              ),
+            ),
+            ListTile(
+              title: Text('Messages'),
+              onTap: (){},
+              leading: Icon(Icons.message),
+            ),
+            ListTile(
+              title: Text('Settings'),
+              onTap: (){},
+              leading: Icon(Icons.settings),
+            ),
+            ListTile(
+              title: Text('Health'),
+              onTap: (){},
+              leading: Icon(Icons.healing)
+            ),
+            ListTile(
+              title: Text('About'),
+              onTap: (){},
+              leading: Icon(Icons.info)
+            ,)
+        ],
+      )
+      );
   }
 }
