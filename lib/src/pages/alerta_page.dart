@@ -42,6 +42,7 @@ class AlertaPage extends StatelessWidget {
             FlatButton(onPressed: () => Navigator.of(context).pop(), child: Text('Cancelar')),
             FlatButton(onPressed: () => Navigator.of(context).pop(), child: Text('Ok')),
           ],
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         );
       }
     );
