@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:components_practice/src/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedContainerPage extends StatefulWidget {
