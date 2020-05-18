@@ -9,7 +9,7 @@ class SliderPage extends StatefulWidget {
 
 class _SliderPageState extends State<SliderPage> {
   double _valueSlider = 100.0;
-
+  bool _blockCheck = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,11 @@ class _SliderPageState extends State<SliderPage> {
           children: 
             <Widget>[
               _createSlider(),
-               _createImage(),
+              _createCheckBox(),
+              _createSwitch(),
+               Expanded(
+                 child: _createImage()
+                 ),
             ],
         )
       ),
@@ -37,7 +41,7 @@ class _SliderPageState extends State<SliderPage> {
       value: _valueSlider,
       min: 10.0,
       max: 400.0, 
-      onChanged: (value){
+      onChanged: (_blockCheck) ? null : (value){
         setState((){
           _valueSlider = value;
         });
@@ -47,9 +51,33 @@ class _SliderPageState extends State<SliderPage> {
 
  Widget _createImage() {
    return Image( 
-     image: NetworkImage('https://lh3.googleusercontent.com/proxy/JfHFlqDhS50KMOOXikNd1ZQSWNxEvJy3zr_ajW_-9boJEQGC5zToMcbNhaRfaBD1-660_gGqqr9n3Ha24t7yp8I'),
+     image: NetworkImage('https://i0.pngocean.com/files/382/59/800/joker-batman-harley-quinn-brazil-the-dark-knight-joker.jpg'),
      width: _valueSlider,
      fit: BoxFit.contain,
    );
  }
+
+  Widget _createCheckBox() {
+    return CheckboxListTile(
+      title: Text('Block slider'),
+      value: _blockCheck, 
+      onChanged: (value){
+        setState(() {
+          _blockCheck = value;
+        });
+      },
+    );
+  }
+
+  Widget _createSwitch() {
+    return SwitchListTile(
+      title: Text('Block slider'),
+      value: _blockCheck, 
+      onChanged: (value){
+        setState(() {
+          _blockCheck = value;
+        });
+      },
+    );
+  }
 }
